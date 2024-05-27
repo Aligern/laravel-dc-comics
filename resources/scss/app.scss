@@ -1,0 +1,129 @@
+@import '~bootstrap/scss/bootstrap';
+
+header {
+    background-color: #FFFFFF;
+        ul{
+        list-style-type: none;
+        display: flex;
+}
+        li {
+            padding: 6px;
+            a{
+                border-bottom: 3px solid transparent;
+                text-decoration: none;
+                color: black;
+                font-weight: 700;
+            }
+}
+a:hover {
+    color: #0282F9;
+    border-bottom: 3px solid #0282F9;
+}
+}
+
+
+#mainTitle {
+    background-color: #0282F9;
+    width: 200px;
+    padding: 5px;
+    text-align: center;
+    transform: translateY(-50%);
+    color: white;
+}
+#jumbotron {
+    height: 350px;
+    background-image: url('../img/jumbotron.jpg');
+}
+#loadMore {
+    background-color: #0282F9;
+    margin-bottom: 20px;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    font-weight: 600;
+}
+
+#footerTop {
+    background-color: #0282F9;
+    display: flex;
+    height: 150px;
+    div {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    #box {
+        align-items: center;
+        img {
+            width: 55px;
+            height: 58px;
+            display: block;
+            padding: 6px;
+        }
+        a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    }
+}
+}
+
+
+#footerMid {
+    background-image: url('./img/footer-bg.jpg');
+    background-size: cover;
+    ul {
+        list-style-type: none;
+        li {
+            a {
+                text-decoration: none;
+                color: rgb(136, 135, 135);
+                font-weight: 600;
+            }
+        }
+    }
+    #left {
+        padding-top: 20px;
+        width: 50%;
+    }
+    #right {
+        background-image: url('./img/dc-logo-bg.png');
+        width: 50%;
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: 70%;
+    }
+    a:hover{
+        color: white;
+    }
+    #title {
+        font-weight: 700;
+    }
+}
+
+#footerbot {
+    background-color: #303030;
+    padding: 20px;
+}
+#followList {
+    list-style-type: none;
+    display: flex;
+    #follow {
+        padding: 5px;
+        #followImg {
+            padding-top: 5px;
+        }
+    }
+}
+button {
+    border: 2px solid #0282F9;
+    background: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    margin-top: 5px;
+}
+span {
+    font-weight: 600;
+    color: #0282F9;
+}
