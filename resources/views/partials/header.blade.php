@@ -5,13 +5,11 @@
         </div>
         <div>
             <ul class="d-flex">
-                @foreach ($links as $link)
                 <li class="list-unstyled px-2">
-                    <a class="text-decoration-none" href="/">
-                        {{ $link }}
+                    <a class="text-decoration-none" href="{{route('comics.index')}}">
+                        Comics
                     </a>
                 </li>
-                @endforeach
             </ul>
         </div>
     </div>

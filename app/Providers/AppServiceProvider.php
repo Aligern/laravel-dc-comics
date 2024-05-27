@@ -18,7 +18,12 @@ class AppServiceProvider extends ServiceProvider
      * Bootstrap any application services.
      */
     public function boot(): void
-    {
+    {   
+        $navLinks = config("nav-links");
+        $footerLinks = config("footerLogos");
+        $footerMidLink = config("footerMidList");
+        $footerBot = config("footerBotImg");
+        view()->share(compact('navLinks','footerLinks','footerMidLink','footerBot'));
         //
     }
 }

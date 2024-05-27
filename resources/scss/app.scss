@@ -1,5 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+    background-color: #303030;
+}
 header {
     background-color: #FFFFFF;
         ul{
@@ -126,4 +129,44 @@ button {
 span {
     font-weight: 600;
     color: #0282F9;
+}
+
+#card {
+    position: relative;
+    &:hover {
+        img {
+            opacity: 0.3;
+        }
+        .buy {
+        opacity: 1;
+    }
+    }
+    img {
+    min-height: 300px;
+    margin-bottom: 10px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+.ls-hover {
+    transition: .5s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.buy {
+    background-color: #0282F9;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 10px;
+    border-radius: 15px;
+    opacity: 0;
+    cursor: pointer;
+    transition: .7s ease;
+}
+}
+#ComicTitle {
+    margin-bottom: 50px;
 }
