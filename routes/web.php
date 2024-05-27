@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::get('/', function () {
     $footerBot = config('footerBotImg');
     return view('Home', compact('links','footerLinks','footerMidLink','footerBot'));
 });
+
+route::get('/', [HomeController::class, 'index']);
