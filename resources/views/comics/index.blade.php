@@ -12,7 +12,7 @@
                 Current Series
             </h5>
         </div>
-        <div>
+        <div class="mb-4">
             <form action="{{route('comics.store')}}" method="GET">
                 <div class="mb-3 form-check w-25" >
                    <select name="search" id="search">
