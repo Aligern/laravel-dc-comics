@@ -44,6 +44,10 @@ a:hover {
     border: none;
     padding: 8px 20px;
     font-weight: 600;
+    a {
+        text-decoration: none;
+        color: white;
+    }
 }
 
 #footerTop {
@@ -169,4 +173,12 @@ span {
 }
 #ComicTitle {
     margin-bottom: 50px;
+}
+#comicButton {
+    background-color: #0282F9;
+    margin-bottom: 20px;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    font-weight: 600;
 }

@@ -5,7 +5,7 @@
         <div id="jumbotron">
         </div>
         <div class="container">
-            <div id="mainTitle">
+            <div id="mainTitle" class="d-none">
                 <h5>
                Current Series
                 </h5>
@@ -17,7 +17,9 @@
             </div>
             <div id="button" class="d-flex justify-content-center">
                 <button id="loadMore">
-                    Load More
+                    <a href="{{route('comics.index')}}">
+                    Go to Comics
+                    </a>
                 </button>
             </div>
         </div>
