@@ -46,6 +46,11 @@
                                     Details
                                 </a>
                             </div>
+                            <div class="buy mt-3">
+                                <a href="{{route('comics.edit', $comic->id)}}" class="text-light text-decoration-none">
+                                Edit
+                            </a>
+                            </div>
                         </div>
                     </div>
                     <div id="ComicTitle">

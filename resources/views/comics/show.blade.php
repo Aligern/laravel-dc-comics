@@ -3,12 +3,12 @@
 @section('title', $comic->title)
 
 @section('content')
-<section class="container">
+<section class="container text-white">
     <h1 class="text-center">
         {{ $comic->title }}
     </h1>
     <div class="row">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 mb-3">
             <img src="{{ $comic->thumb }}" class="img-fluid" alt="{{ $comic->title }}">
         </div>
         <div class="col-12 col-md-8">
@@ -28,7 +28,7 @@
                 Sale Date: {{ $comic->sale_date }}
             </div>
             <button>
-                <a href="{{route('comics.index')}}">
+                <a class="text-decoration-none text-light" href="{{route('comics.index')}}">
                     Back to comics
                 </a>
             </button>
