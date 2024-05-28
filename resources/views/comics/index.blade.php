@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Comics')
+
 @section('content')
 <div id="main">
     <div id="jumbotron">
@@ -38,6 +40,11 @@
                         <div class="ls-hover">
                             <div class="buy">
                                 Acquista
+                            </div>
+                            <div class="buy mt-3">
+                                <a class="text-light text-decoration-none" href="{{route('comics.show', $comic->id)}}">
+                                    Details
+                                </a>
                             </div>
                         </div>
                     </div>
