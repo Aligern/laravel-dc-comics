@@ -10,14 +10,16 @@
                Current Series
                 </h5>
             </div>
-            <div id="cards" class="row m-auto text-light" >
-                <div id="cardCol" class="col-12 col-md-3 col-lg-2">
-                </div>
+            <div class="container text-center">
+                <h1 class="text-white">
+                    It seems pretty empty here..
+                </h1>
+                    <img src="/img/SadJoker.jpg" alt="SadJoker">
             </div>
             <div id="button" class="d-flex justify-content-center">
                 <button id="loadMore">
-                    <a href="{{route('comics.index')}}">
-                    Go to Comics
+                    <a href="{{route('comics.create')}}">
+                    Add Your Comics!
                     </a>
                 </button>
             </div>
