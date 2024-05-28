@@ -33,7 +33,17 @@ class ComicController extends Controller
     {
         //
         $form_comic = $request->all();
-        dd($form_comic);
+        // dd($form_comic);
+        $new_comic = new Comic();
+        $new_comic->title = $form_comic['title'];
+        $new_comic->description = $form_comic['description'];
+        $new_comic->thumb = $form_comic['thumb'];
+        $new_comic->price = $form_comic['price'];
+        $new_comic->series = $form_comic['series'];
+        $new_comic->sale_date = $form_comic['sale_date'];
+        $new_comic->type = $form_comic['type'];
+        $new_comic->save();
+        return redirect('')->route('comics.index');
     }
 
     /**
