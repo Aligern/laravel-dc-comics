@@ -54,9 +54,9 @@
                  <div class="mb-3 form-check w-25" >
                     <label for="type" class="form-label" required>Type</label>
                    <select class="form-control" @error('type') is-invalid @enderror id="type" aria-describedby="typeHelp" name="type">
-                    <option value="#" {{ old('type', $comic->type === '#' ? 'selected' : '')}} selected>Choose the type of comic</option>
-                    <option value="comic book" {{ old('type', $comic->type === 'comic book' ? 'selected' : '')}}>Comic book</option>
-                    <option value="graphic novel" {{ old('type', $comic->type === 'graphic novel' ? 'selected' : '')}}>Graphic novel</option>
+                    <option value="#" selected>Choose the type of comic</option>
+                    <option value="comic book">Comic book</option>
+                    <option value="graphic novel">Graphic novel</option>
                    </select>
                  </div>
                  
