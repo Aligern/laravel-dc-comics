@@ -8,58 +8,41 @@
     </div>
     <div class="container pb-3">
         <div id="mainTitle">
-            <h5>
-                Current Series
-            </h5>
+            <h5>Current Series</h5>
         </div>
+        
         <div class="mb-4">
             <form action="{{route('comics.store')}}" method="GET">
                 <div class="mb-3 form-check w-25" >
                    <select name="search" id="search">
-                    <option value="#" selected>
-                        Choose the type of comic
-                    </option>
-                    <option value="comic book">
-                        comic book
-                    </option>
-                    <option value="graphic novel">
-                        graphic novel
-                    </option>
+                    <option value="#" selected>Choose the type of comic</option>
+                    <option value="comic book">Comic book</option>
+                    <option value="graphic novel">Graphic novel</option>
                    </select>
                  </div>
-                <button type="submit" class="btn btn-success ms-3">
-                    Search
-                </button>
+                <button type="submit" class="btn btn-success ms-3">Search</button>
             </form>
         </div>
+
         <div id="cards" class="row m-auto text-light">
             @foreach ($comics as $comic)
             <div id="cardCol" class="col-12 col-md-3 col-lg-2">
                     <div id="card">
                         <img src="{{ $comic->thumb }}" class="w-100 img-fluid " alt="{{ $comic->title }}">
                         <div class="ls-hover">
-                            <div class="buy">
-                                Acquista
+                            <div class="buy">Acquista</div>
+                            <div class="buy mt-3">
+                                <a class="text-light text-decoration-none" href="{{route('comics.show', $comic->id)}}">Details</a>
                             </div>
                             <div class="buy mt-3">
-                                <a class="text-light text-decoration-none" href="{{route('comics.show', $comic->id)}}">
-                                    Details
-                                </a>
-                            </div>
-                            <div class="buy mt-3">
-                                <a href="{{route('comics.edit', $comic->id)}}" class="text-light text-decoration-none">
-                                Edit
-                            </a>
+                                <a href="{{route('comics.edit', $comic->id)}}" class="text-light text-decoration-none">Edit</a>
                             </div>
                         </div>
                     </div>
+
                     <div id="ComicTitle">
-                        <h6>
-                            {{ $comic->title }}
-                        </h6>
-                        <span>
-                            {{ $comic->price }}
-                        </span>
+                        <h6>{{ $comic->title }}</h6>
+                        <span>{{ $comic->price }}</span>
                     </div>
             </div>
             @endforeach

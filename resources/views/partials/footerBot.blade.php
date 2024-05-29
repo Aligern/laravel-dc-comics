@@ -1,15 +1,10 @@
 <div id="footerbot" class="text-white">
     <div class="container d-flex justify-content-between align-items-center ">
         <div>
-            <button>
-                SIGN-UP NOW
-            </button>
+            <button>SIGN-UP NOW</button>
         </div>
         <div class="d-flex align-items-center">
-            <span>
-                FOLLOW US
-            </span>
-
+            <span>FOLLOW US</span>
             <ul id="followList">
                 @foreach ( $footerBot as $item )
                     <li id="follow">

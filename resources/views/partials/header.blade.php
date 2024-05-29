@@ -6,9 +6,7 @@
         <div>
             <ul class="d-flex">
                 <li class="list-unstyled px-2">
-                    <a class="text-decoration-none" href="{{route('comics.index')}}">
-                        Comics
-                    </a>
+                    <a class="text-decoration-none" href="{{route('comics.index')}}">Comics</a>
                 </li>
             </ul>
         </div>

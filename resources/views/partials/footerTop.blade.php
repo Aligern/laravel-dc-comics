@@ -3,9 +3,7 @@
         @foreach ( $footerLinks as $link )
             <div id="box" class="d-flex">
                 <img src="{{ $link['img'] }}" alt="Logos">
-                    <a href="#">
-                        {{ $link['text'] }}
-                    </a>
+                    <a href="#">{{ $link['text'] }}</a>
             </div>
         @endforeach
         </div>
