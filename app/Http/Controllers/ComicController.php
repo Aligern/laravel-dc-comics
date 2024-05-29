@@ -49,7 +49,7 @@ class ComicController extends Controller
         ]);
         $form_comic = $request->all();
         // dd($form_comic);
-    //     $new_comic = new Comic();
+        $new_comic = new Comic();
     //     $new_comic->title = $form_comic['title'];
     //     $new_comic->description = $form_comic['description'];
     //     $new_comic->thumb = $form_comic['thumb'];
@@ -57,9 +57,9 @@ class ComicController extends Controller
     //     $new_comic->series = $form_comic['series'];
     //     $new_comic->sale_date = $form_comic['sale_date'];
     //     $new_comic->type = $form_comic['type'];
-    //     $new_comic->save();
             $new_comic = Comic::create($form_comic);
-         return redirect()->route('comics.index')->with('status', 'New comic has been added');
+            $new_comic->save();
+            return redirect()->route('comics.index')->with('status', 'New comic has been added');
     }
 
     /**
@@ -83,19 +83,28 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        $comic = Comic::find($id);
+        $request->validate([
+            'title' => 'required|max:100|min:2',
+            'description' => 'nullable|max:255',
+            'thumb' => 'nullable|max:255',
+            'price' => 'required|numeric|max:50',
+            'series' => 'required|max:100',
+            'sale_date' => 'required|date',
+            'type' => 'required|max:20',
+        ]);
+        //$comic = Comic::find($id);
         $form_comic = $request->all();
         // dd($form_comic);
-        $comic->title = $form_comic['title'];
-        $comic->description = $form_comic['description'];
-        $comic->thumb = $form_comic['thumb'];
-        $comic->price = $form_comic['price'];
-        $comic->series = $form_comic['series'];
-        $comic->sale_date = $form_comic['sale_date'];
-        $comic->type = $form_comic['type'];
-        $comic->update();
+        // $comic->title = $form_comic['title'];
+        // $comic->description = $form_comic['description'];
+        // $comic->thumb = $form_comic['thumb'];
+        // $comic->price = $form_comic['price'];
+        // $comic->series = $form_comic['series'];
+        // $comic->sale_date = $form_comic['sale_date'];
+        // $comic->type = $form_comic['type'];
+         $comic->update($form_comic);
         return redirect()->route('comics.index', $comic->id);
         //
     }

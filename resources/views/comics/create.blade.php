@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Aggiungi nuovo comic')
+@section('title', 'Add a new comic')
 
 @section('content')
     <section class="container text-white pb-4">
-        <h1 class="text-center">Crea una nuova scheda</h1>
+        <h1 class="text-center">Create a new comic</h1>
         <form action="{{ route('comics.store') }}" method="POST">
             @csrf
             <div class="mb-3">
@@ -51,7 +51,7 @@
             <div class="mb-3 form-check w-25">
                 <label for="type" class="form-label">Type</label>
                 <select class="form-control" id="type" @error('type') is-invalid @enderror aria-describedby="typeHelp" name="type">
-                    <option value="" active>Choose the type of comic</option>
+                    <option value="#" active>Choose the type of comic</option>
                     <option value="comic book">Comic book</option>
                     <option value="graphic novel">Graphic novel</option>
                 </select>
