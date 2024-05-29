@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Comic;
 
 class ComicController extends Controller
@@ -37,17 +38,9 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $form_comic = $this->validation($request->all());
         // we need to validate the form
-        $request->validate([
-            'title' => 'required|max:100|min:2',
-            'description' => 'nullable|max:255',
-            'thumb' => 'nullable|max:255',
-            'price' => 'required|numeric|max:50',
-            'series' => 'required|max:100',
-            'sale_date' => 'required|date',
-            'type' => 'required|max:20',
-        ]);
-        $form_comic = $request->all();
+        // $form_comic = $request->all();
         // dd($form_comic);
         $new_comic = new Comic();
     //     $new_comic->title = $form_comic['title'];
@@ -85,15 +78,6 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $request->validate([
-            'title' => 'required|max:100|min:2',
-            'description' => 'nullable|max:255',
-            'thumb' => 'nullable|max:255',
-            'price' => 'required|numeric|max:50',
-            'series' => 'required|max:100',
-            'sale_date' => 'required|date',
-            'type' => 'required|max:20',
-        ]);
         //$comic = Comic::find($id);
         $form_comic = $request->all();
         // dd($form_comic);
@@ -117,5 +101,19 @@ class ComicController extends Controller
         $comic->delete();
         return redirect()->route('comics.index');
         //
+    }
+
+    public function validation($data) {
+       $validator = Validator::make($data, [
+        'title' => 'required|max:100|min:2',
+        'description' => 'nullable|max:255',
+        'thumb' => 'nullable|max:255',
+        'price' => 'required|numeric|max:50',
+        'series' => 'required|max:100',
+        'sale_date' => 'required|date',
+        'type' => 'required|max:20',
+    ])->validate();
+
+    return $validator;
     }
 }
