@@ -5,6 +5,17 @@
 @section('content')
     <section class="container text-white pb-4">
         <h1 class="text-center">Crea una nuova scheda</h1>
+        <div>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
         <form action="{{ route('comics.store') }}" method="POST">
             @csrf
             <div class="mb-3">
