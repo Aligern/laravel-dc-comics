@@ -78,8 +78,9 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $form_comic = $this->validation($request->all());
         //$comic = Comic::find($id);
-        $form_comic = $request->all();
+        //$form_comic = $request->all();
         // dd($form_comic);
         // $comic->title = $form_comic['title'];
         // $comic->description = $form_comic['description'];
