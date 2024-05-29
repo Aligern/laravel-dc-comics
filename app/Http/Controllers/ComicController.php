@@ -112,6 +112,14 @@ class ComicController extends Controller
         'series' => 'required|max:100',
         'sale_date' => 'required|date',
         'type' => 'required|max:20',
+       ],[
+        'title.required ' => 'Il campo title è obbligatorio',
+        'title.min' => 'Il campo title deve avere almeno :min caratteri',
+        'title.max' => 'Il campo title non deve superare i :max caratteri',
+        'description.max' => 'Il campo description non deve superare i :max caratteri',
+        'thumb.max' => 'Il campo thumb non deve superare i :max caratteri',
+        'price.required' => 'Il campo price è obbligatorio',
+        'series.required' => 'Il campo series è obbligatorio',
     ])->validate();
 
     return $validator;
